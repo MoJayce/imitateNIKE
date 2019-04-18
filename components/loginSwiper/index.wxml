@@ -1,0 +1,24 @@
+<scroll-view class="scroll-view_H" scroll-y="true" style="width: 100%;height:100%">
+  <view class='wrap'>
+    <view class='back' bindtap='back' wx:if="{{url == 'pages/mine/index'}}">
+      <image src='../../image/nav/back.png' mode='widthFix'></image>
+    </view>
+    <swiper style='height:100%' current="{{currentSwiper}}" bindchange="swiperChange" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{adList}}" wx:key="index">
+        <swiper-item>
+          <image wx:if="{{url == 'pages/mine/index'}}" src="{{item.picUrl}}" class="slide-image" />
+          <image wx:else src="{{item.picUrl}}" class="slide-image" mode="widthFix" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <!--重置小圆点的样式  -->
+    <view class="dots">
+      <block wx:for="{{adList}}" wx:key="index">
+        <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
+      </block>
+    </view>
+    <view class='more' bindtap='onLogin'>
+      注册登录
+    </view>
+  </view>
+</scroll-view>

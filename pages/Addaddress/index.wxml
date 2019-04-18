@@ -1,0 +1,53 @@
+<view class='name'>
+  <view>
+    <view>姓氏</view>
+    <input placeholder='请填写姓氏' bindinput='formName' value='{{user_name}}' ></input>
+  </view>
+  <view>
+    <view>名字</view>
+    <input placeholder='请填写名字' bindinput='formName1' ></input>
+  </view>
+</view>
+<view class='region'>
+  <view>地区</view>
+  <view>
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="picker" style='color:#aaa' wx:if='{{isRegion}}'>
+        {{region[0]}}{{region[1]}}{{region[2]}}
+      </view>
+      <view class="picker" wx:else>
+        {{region[0]}} / {{region[1]}} / {{region[2]}}
+      </view>
+    </picker>
+  </view>
+</view>
+<view class='region'>
+  <view>地址</view>
+  <view>
+    <input placeholder='请填写详细地址'  bindinput='detailAddress'></input>
+  </view>
+</view>
+<view class='Email'>
+  <view>邮编</view>
+  <view>
+    <input placeholder='选填' bindinput='postcd'></input>
+  </view>
+</view>
+
+<view class='phone' style='margin: 20rpx auto 0 auto;'>
+  <view>电话号码</view>
+  <view>
+    <input placeholder='请填写电话号码' bindinput='telepone'></input>
+  </view>
+</view>
+<view class='phone' bindtap='choseDefault'>
+  <view>设为默认</view>
+  <view>
+    <icon wx:if="{{IsDefault}}" type="success" size="26" color="#aaa" />
+    <icon wx:else type="success" size="26" color="#000" />
+  </view>
+</view>
+<view class='bottomBtn'>
+    <view class='save' bindtap='save'>保存</view>
+    <view wx:if="{{del}}" bindtap='del'>删除</view>
+</view>

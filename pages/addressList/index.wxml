@@ -1,0 +1,28 @@
+<view wx:if="{{isAddress}}" class='List'>
+  <view wx:for="{{addressList}}" wx:key class='addList'>
+    <view class='name'>
+      <text>{{item.name}}</text>
+      <text style='color:#aaa;margin:0 20rpx'>(默认)</text>
+    </view>
+    <view class='phone font'>{{item.phone}}</view>
+    <view class='Provinces font'>{{item.Provinces}}</view>
+    <view class='detailedAddress font'>{{item.detailedAddress}}</view>
+    <view class='edit font' catchtap='editAddress'>编辑</view>
+  </view>
+  <view bindtap='choseAdd'>
+    <image src='../../image/nav/right.png'></image>
+  </view>
+</view>
+<view wx:else class='addNewAddress'>
+  <view>
+    <image src='../../image/nav/address.png'></image>
+  </view>
+  <view class='none'>还没有任何配送地址</view>
+  <view class='tips'>您可以新增地址或者使用微信地址</view>
+  <view class='newBtn' bindtap='AddNew'>新增地址</view>
+  <view class='useWx' bindtap='GetWxAd'>使用微信地址</view>
+</view>
+<view wx:if="{{isAddress}}" class='botmBtn'>
+  <view class='newBtn' bindtap='AddNew'>新增地址</view>
+  <view class='useWx' bindtap='GetWxAd'>使用微信地址</view>
+</view>

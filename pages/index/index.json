@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "loginSwiper": "/components/loginSwiper/index"
+  },
+  "navigationStyle": "custom"
+}

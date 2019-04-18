@@ -1,0 +1,52 @@
+<view class='tabNav'>
+  <view>你的商店</view>
+  <view class='typeTab'>
+    <view class='{{mans == item?"tab":""}}' wx:for="{{human}}" wx:key data-Name="{{item}}" bindtap='man'>{{item}}</view>
+  </view>
+</view>
+ <scroll-view scroll-y class='a' bindscroll="onPageScroll" style="height: 100%;margin-top:{{toViews?'170rpx':'0rpx'}}" scroll-into-view="{{toView}}"> 
+ <!-- <scroll-view scroll-y bindscroll="onPageScroll"  animation="{{animationData}}" style="height: 100%;margin-top:100rpx;position:reletive;top:0" >  -->
+<!-- section one -->
+<view class='sectionOne'>
+  <view class='newest'>
+    <view style='float:left;font-size:34rpx;font-weight: bold;'>最新特辑</view>
+    <view style='float:right;font-size:26rpx;color:#ccc'>{{num}}/{{humanList.length}}</view>
+  </view>
+  <view style='width:100%;height:400rpx'>
+    <swiper style='width:auto;height:100%' current="{{currentSwiper}}" bindchange="swiperChange" duration="{{duration}}">
+      <block wx:for="{{humanList}}" wx:key="index">
+        <swiper-item style="width:auto">
+          <image src="{{item.picUrl}}" class="slide-image" mode="widthFix" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>
+<!-- section two -->
+<view class='sectionTwo'>
+  <view>
+    <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+      <view class="kind-list-item" id="{{item.id}}"  bindtap='toTop'>
+        <view id="{{item.id}}" class="kind-list-item-hd" bindtap="kindToggle">
+          <view class="kind-list-text">
+            <image src='{{item.src}}' mode="widthFix"></image>
+          </view>
+        </view>
+        <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
+          <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
+            <block wx:for-items="{{item.pages}}" wx:for-item="page" wx:key="*item">
+              <navigator url="../goodslist/index?gid={{page.url}}" class="navigator">
+                <view class="navigator-text" style='color:{{page.url=="shoes"||page.url=="Clothes"?"grey":"black"}}'>{{page.type}}</view>
+                <!-- icon -->
+                <!-- <view class="navigator-arrow"></view> -->
+              </navigator>
+            </block>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<view style='width:100%;height:1000rpx'>
+</view>
+</scroll-view>

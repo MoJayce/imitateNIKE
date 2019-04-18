@@ -1,0 +1,110 @@
+<!-- 轮播图 -->
+<view class='warp'>
+  <swiper style='height:620rpx' autoplay="{{autoplay}}" interval="{{interval}}" indicator-color="{{indicatorColor}}" indicator-dots="{{indicatorDots}}" duration="{{duration}}" indicator-active-color="{{indicatorActiveColor}}">
+    <block wx:for="{{shoesImgList}}" wx:key>
+      <swiper-item wx:for="{{item.imgSrc}}" wx:key="index">
+        <image src="{{item}}" class="slide-image" mode='widthFix' data-src="{{item}}" data-index="{{index}}" bindtap='preview' />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%;margin-top:100rpx">
+  <block wx:for="{{shopCart}}" wx:key>
+    <view class="scroll-view-item_H {{ShoesColor == item.color?'actives':''}}" data-url='{{item.src}}' data-color='{{item.color}}' bindtap='choseShoes'>
+      <image src='{{item.src}}' class='smasllImg'></image>
+    </view>
+  </block>
+</scroll-view>
+<!-- 简介区 -->
+<view class='synopsis' wx:for="{{shoesImgList}}" wx:key>
+  <view>
+    <view class='title'>{{item.title}}</view>
+    <view class='price'>￥{{item.price}}</view>
+  </view>
+  <view class='names'>{{item.name}}</view>
+  <view class='msg'>{{item.msg}}</view>
+  <view class='styles'>多色/多色</view>
+  <view class='styles'>款式/Air Jordan 1 Retro High</view>
+</view>
+<!-- 购买按钮 从底部弹出来的-->
+<view class='buy_btn'>
+</view>
+<view class='buy_now {{showView?"show":"hide"}}' bindtap='buyNow'>立即购买</view>
+<mask hidden="{{hidden1}}" style="z-index: 1;" hover-style="none" bindtap="hideMask" />
+<!-- 选择规格 -->
+<view class='specification {{showView?"hide":"show"}}'>
+  <view>
+    <view class='color'>颜色尺码</view>
+    <view class='bigImg'>
+      <image src='{{bigImgSrc}}' mode='widthFix' class='smasllImgC'></image>
+    </view>
+    <!-- 图片 -->
+    <view class='imgTab'>
+      <scroll-view class="scroll-view_Hs" scroll-x="true" style="width: 100%">
+        <block wx:for="{{shopCart}}" wx:key>
+          <view class="scroll-view-item_Hs {{ ShoesColor == item.color ?'actives':''}}" data-url='{{item.src}}' data-color='{{item.color}}' bindtap='choseShoes'>
+            <image src='{{item.src}}' class='smasllImg'></image>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+    <!-- 尺码 -->
+    <view class='size'>
+      <view wx:for="{{sizelist}}" wx:key="index" id='{{index<6?"borderTop":""}}' class='{{sizeId == item.size?"black":""}}' data-length="{{index}}" data-size="{{item.size}}" bindtap='choseSize'>{{item.size}}</view>
+    </view>
+    <view class='next'>
+      <view class='{{sizeId == ""?"next_none":""}}' bindtap='next'>下一步</view>
+    </view>
+    <view style='width:100%;height:68rpx'></view>
+  </view>
+
+</view>
+<view class='choseAddress {{showViews?"hide":"show"}}'>
+    <!-- tab1 -->
+      <view class='tab1'>
+        <image src='{{chose_img}}'></image>
+        <view class='block'></view>
+        <view class='sizeMsg'>
+          <view>{{chose_name}}</view>
+          <view>尺码:{{chose_size}}</view>
+        </view>
+        <view class='right' bindtap='toChose'><image src='../../image/nav/right.png'></image></view>
+      </view>
+    <!-- tab2 -->
+      <view class='tab2' bindtap='addAddress'>
+        <view>配送信息</view>
+        <view wx:if="{{addmsgs}}">添加配送信息</view>
+        <view wx:else style='color:#000'>{{addmsg}}</view>
+        <view class='right'><image src='../../image/nav/right.png'></image></view>
+      </view>
+    <!-- tab3 -->
+      <view class='tab2'>
+          <view>电子邮件</view>
+          <view>添加电子邮箱</view>
+          <view class='right'><image src='../../image/nav/right.png'></image></view>
+      </view>
+    <!-- tab4 -->
+    <view class='tab2'>
+        <view>电子发票</view>
+        <view>添加电子发票信息(选填)</view>
+        <view class='right'><image src='../../image/nav/right.png'></image></view>
+    </view>
+    <!-- tab5-->
+    <view class='tab2' >
+        <view>促销码</view>
+        <view>(选填)</view>
+        <view class='right'><image src='../../image/nav/right.png'></image></view>
+    </view>
+    <!-- tab6-->
+    <view class='tab2'>
+        <view>订单总额</view>
+        <view>依据配送方式计算</view>
+        <view class='right'><image src='../../image/nav/right.png'></image></view>
+    </view>
+    <!-- tab7  -->
+    <view class='toPay'>
+    <text>点击去支付即表示您同意NIKE的销售条款</text>
+      <view class='{{addmsgs?"":"black_pay"}}' bindtap='toPay'>去支付</view>
+    </view>
+</view>
+<view style='width:100%;height:200rpx'></view>

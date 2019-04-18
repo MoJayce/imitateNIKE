@@ -1,0 +1,17 @@
+<!-- swiper组件 判断登录注册，如果登录了这个模块可以不显示-->
+ <!-- <view class='Top'></view> -->
+ <scroll-view class="scroll-view_H hasTop" scroll-y="true" style="width: 100%">
+<loginSwiper style="display:block;width:100%;height:800rpx"></loginSwiper>
+
+<!-- 最新活动栏目 -->
+<view class='activity'> 
+  <text>最新潮流</text>
+  <view>最新品牌故事、最新产品和会员限定产品</view>
+</view>
+<view class='block' wx:for="{{imgList}}" wx:key="">
+  <image src='{{item.url}}' mode='widthFix'></image>
+  <view class='more' data-id="{{item.id}}" bindtap='getMsg'>
+    了解更多
+  </view>
+</view>
+ </scroll-view>

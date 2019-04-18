@@ -1,0 +1,21 @@
+<view class='nav'>
+  <!-- 导航栏 -->
+  <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%" scroll-into-view="{{toView}}">
+    <block wx:for="{{pages}}" wx:key>
+      <view class="scroll-view-item_H {{item.chose?'active':''}}"  data-type='{{item.type}}' bindtap='choseShoes' id="{{item.id}}">
+        {{item.type}}
+      </view>
+    </block>
+    <!-- 偏移的div -->
+    <view class='bottom_line' style='position:absolute;left:{{left}}rpx' animation="{{animationData}}"></view>
+  </scroll-view>
+</view>
+<!-- 内容区域 -->
+<view class='content'>
+  <view class='goods' wx:for="{{allShoes}}" wx:key data-id="{{item.id}}" bindtap='goodsDetail'>
+    <image src='{{item.imgSrc}}' mode='widthFix'></image>
+    <view class='title'>{{item.title}}</view>
+    <view class='type'>{{item.type}}</view>
+    <view class='price'>￥{{item.price}}</view>
+  </view>
+</view>

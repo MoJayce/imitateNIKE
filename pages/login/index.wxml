@@ -1,0 +1,43 @@
+<view class='regReady'>
+  <view style='margin:20rpx 0;'>logo</view>
+  <view style='margin:20rpx 0;'>您就快完成了</view>
+  <view class='fontSize' style='margin:20rpx 0;'>我们已连接您的账户</view>
+  <view style='margin:20rpx 0;'>微信图标</view>
+  <view class='fontSize' style='margin:20rpx 0;'>请填写档案，创建账户</view>
+</view>
+<view class='regForm fontSize'>
+  <!-- 已授权可直接获取手机号 -->
+  <view class='inputPhone'>
+    <button class='fontSize' bindtap='back'>手机号码+{{phoneNum}}</button>
+  </view>
+  <view>
+    <view class='inputName fontSize'>
+      <input placeholder='姓氏'></input>
+      <input placeholder='名字'></input>
+    </view>
+    <view class='inputPassWord fontSize'>
+      <input placeholder='密码' type='password'></input>
+    </view>
+    <view class='gender fontSize'>
+      <view>男</view>
+      <view>女</view>
+    </view>
+    <view class='checkbox'>
+      <checkbox-group bindchange="checkboxChange">
+        <label>
+          <checkbox value='{{itemChecked}}' />
+          <view>注册接收通讯内容，以及获取Nike最新动态</view>
+        </label>
+      </checkbox-group>
+      <!-- <checkbox></checkbox> -->
+    </view>
+    <view class='tips'>
+      一旦创建账户，即表明你同意 NIKE 的隐私条款 和使用条款
+    </view>
+    <view>
+      <view class='reg' bindtap='reg'>注册</view>
+      <view class='back' bindtap='back'>返回</view>
+    </view>
+  </view>
+</view>
+<view style='width:100%;height:20rpx;margin:20rpx 0;'></view>

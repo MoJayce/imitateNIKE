@@ -1,0 +1,130 @@
+.tops {
+  width: 100%;
+  text-align: center;
+  padding: 8%;
+  box-sizing: border-box;
+}
+
+.fontSize {
+  font-size: 26rpx;
+  margin: 40rpx auto;
+}
+
+.PhoneNumber, .verification {
+  width: 82%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border: 1rpx solid #aaa;
+  border-radius: 6rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.PhoneNumber>view:nth-of-type(1) {
+  width: 15%;
+  border-top-left-radius: 6rpx;
+  border-bottom-left-radius: 6rpx;
+}
+
+.PhoneNumber>view:nth-of-type(2) {
+  width: 30%;
+  border-top-right-radius: 6rpx;
+  border-bottom-right-radius: 6rpx;
+}
+
+.PhoneNumber>view {
+  text-align: center;
+  /* font-weight: bold; */
+  height: 100%;
+  background: #ccc;
+}
+
+.PhoneNumber>input {
+  display: block;
+  width: 50%;
+  height: 100%;
+  line-height: 80rpx;
+}
+
+.verification>input {
+  flex: 1;
+  height: 100%;
+  padding-left: 4%;
+}
+
+.next {
+  width: 82%;
+  height: 80rpx;
+  background: #000;
+  border-radius: 6rpx;
+  color: #fff;
+  margin: 40rpx auto;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 30rpx;
+}
+
+.line {
+  width: 80%;
+  height: 60rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin: 20rpx auto;
+  position: relative;
+}
+
+.line>view {
+  width: 40%;
+  height: 1rpx;
+  background: #ccc;
+}
+.line>text {
+  width: 20%;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  color: #aaa;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.line>view:nth-of-type(1) {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.line>view:nth-of-type(2) {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+.toLogin{
+  width: 80%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 26rpx;
+  text-align: center;
+  margin: 20rpx auto;
+  display: flex;
+  justify-content: center;
+}
+.toLogin>view:nth-of-type(1){
+  color: #aaa;
+}
+.toLogin>view:nth-of-type(2){
+  text-decoration: underline 
+}
+.Iscountry {
+  width: 82%;
+  height: 80rpx;
+  margin: 20rpx auto;
+  line-height: 80rpx;
+  border: 1rpx solid #aaa;
+  border-radius: 6rpx;
+  padding-left:4%;
+  box-sizing: border-box
+}

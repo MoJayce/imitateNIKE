@@ -1,0 +1,119 @@
+page{
+  background: #efefee;
+}
+.name{
+  width: 100%;
+  display:flex;
+  flex-flow: row nowrap;
+  box-sizing: border-box;
+  background: #fff;
+}
+.name>view:nth-of-type(1){
+  width: 40%;
+  line-height: 100rpx;
+  padding: 0 4%;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.name>view:nth-of-type(2){
+  width: 60%;
+  line-height: 100rpx;
+  padding: 0 4%;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.name>view:nth-of-type(1)>view{
+  flex: 3;
+  font-weight: bold;
+}
+.name>view:nth-of-type(2)>view{
+  flex: 2;
+  font-weight: bold;
+}
+.name>view:nth-of-type(1)>input{
+  display: block;
+  flex: 7;
+  height: 100%;
+}
+.name>view:nth-of-type(2)>input{
+  display: block;
+  flex: 8;
+  height: 100%;
+}
+.region{
+  width: 100%;
+  height: 120rpx;
+  line-height: 120rpx;
+  padding: 0 4%;
+  margin: 0 auto;
+  border-bottom: 1rpx solid #ccc;
+  display: flex;
+  flex-flow: row nowrap;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  background: #fff;
+}
+.region>view:nth-of-type(1),.Email>view:nth-of-type(1),.phone>view:nth-of-type(1){
+  font-weight: bold;
+  width: 40%;
+}
+.region>view:nth-of-type(2),.Email>view:nth-of-type(2),.phone>view:nth-of-type(2){
+  font-weight: bold;
+  width: 60%;
+}
+.region>view>input,.Email>view>input{
+  width: 100%;
+  height: 100%;
+}
+.Email{
+    width: 100%;
+  height: 120rpx;
+  line-height: 120rpx;
+  padding: 0 4%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  background: #fff;
+}
+.phone{
+  width: 100%;
+  height: 120rpx;
+  line-height: 60rpx;
+  padding: 4%;
+  display: flex;
+  flex-flow: row nowrap;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #aaa;
+}
+.bottomBtn{
+  width: 100%;
+  box-sizing: border-box;
+  margin: 60rpx auto;
+}
+.bottomBtn>view:nth-of-type(1){
+  width: 90%;
+  height: 100rpx;
+  background: #000;
+  color: #fff;
+  border-radius: 100rpx;
+  margin: 20rpx auto;
+  line-height: 100rpx;
+  text-align: center;
+}
+.bottomBtn>view:nth-of-type(2){
+  width: 90%;
+  height: 100rpx;
+  border: 2rpx solid #000;
+  border-radius: 100rpx;
+  margin: 20rpx auto;
+  line-height: 100rpx;
+  text-align: center;
+}
