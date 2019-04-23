@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/goodsdetail/index",
     "pages/index/index",
+    "pages/goodsdetail/index",
     "pages/userInfo/index",
     "pages/addressList/index",
     "pages/Addaddress/index",
