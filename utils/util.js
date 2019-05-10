@@ -203,8 +203,8 @@ let phoneNum = "";
 let address = "";
 module.exports = {
   formatTime: formatTime, 
-  host: 'http://192.168.0.138',
-  imgUrl: 'http://192.168.0.138',
+  host: 'http://192.168.0.11',
+  imgUrl: 'http://192.168.0.11',
   sessionId:"",
   sceneId: wx.getLaunchOptionsSync().scene,
   wid:1,
