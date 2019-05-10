@@ -17,8 +17,17 @@
         <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
       </block>
     </view>
-    <view class='more' bindtap='onLogin'>
+    <button class='more' open-type="getUserInfo"  bindgetuserinfo="bindGetUserInfo">
       注册登录
-    </view>
+    </button>
   </view>
 </scroll-view>
+<mask hidden="{{hidden1}}" style="z-index: 1;" hover-style="none" />
+<view class='regbtn' wx:if="{{hidden2}}">
+  <view>登录成功！</view>
+  <view>尚未注册,是否马上注册？</view>
+  <view class='queding'>
+    <view style='border-right:1rpx solid #ccc' bindtap='IsSure'>取消</view>
+    <view><button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">确定</button></view> 
+  </view>
+</view>

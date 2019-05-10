@@ -3,7 +3,8 @@
     logo
   </view>
   <view>
-    注册成功！{{name}}
+    注册成功！
+    <!-- {{name}} -->
   </view>
   <view class='fontSize'>
     祝贺您，您现在已是一名 Nike 会员！告诉我们跟多有关您的信息，您便可获得更多福利！

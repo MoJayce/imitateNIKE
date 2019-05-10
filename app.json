@@ -1,51 +1,64 @@
 {
-  "pages":[
+  "pages": [
+    "pages/cart/index",
     "pages/index/index",
     "pages/goodsdetail/index",
-    "pages/userInfo/index",
-    "pages/addressList/index",
-    "pages/Addaddress/index",
     "pages/mall/index",
-    "pages/RegSuccess/index",
-    "pages/login/index",
-    "pages/Reg/index",
-    "pages/Logining/index",
-    "components/loginSwiper/index",
     "pages/goodslist/index",
     "pages/mine/index",
+    "components/loginSwiper/index",
+    "pages/Reg/index",
+    "pages/order/index",
+    "pages/addressList/index",
+    "pages/Addaddress/index",
+    "pages/RegSuccess/index",
+    "pages/login/index",
+    "pages/Logining/index",
     "pages/logs/logs"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
-    "tabBar": {
-      "color": "#6e6d6b",
-      "selectedColor": "#e64340",
-      "borderStyle": "white",
-      "backgroundColor": "#fff",
-      "box-shadow": "0 0 6px 0",
-      "list": [
-        {
-          "pagePath": "pages/index/index",
-          "iconPath": "image/nav/home-off.png",
-          "selectedIconPath": "image/nav/home-on.png",
-          "text": "首页"
-        },
-        {
-          "pagePath": "pages/mall/index",
-          "iconPath": "image/nav/mall-off.png",
-          "selectedIconPath": "image/nav/mall-on.png",
-          "text": "商城"
-        },
-        {
-          "pagePath": "pages/mine/index",
-          "iconPath": "image/nav/my-off.png",
-          "selectedIconPath": "image/nav/my-on.png",
-          "text": "我的"
-        }
-      ]
+  "tabBar": {
+    "color": "#6e6d6b",
+    "selectedColor": "#e64340",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "box-shadow": "0 0 6px 0",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "image/nav/home-off.png",
+        "selectedIconPath": "image/nav/home-on.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/mall/index",
+        "iconPath": "image/nav/mall-off.png",
+        "selectedIconPath": "image/nav/mall-on.png",
+        "text": "商城"
+      },
+      {
+        "pagePath": "pages/cart/index",
+        "iconPath": "image/nav/cart-off.png",
+        "selectedIconPath": "image/nav/cart-on.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "iconPath": "image/nav/my-off.png",
+        "selectedIconPath": "image/nav/my-on.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息将用于小程序"
     }
+  },
+  "sitemapLocation": "sitemap.json"
 }

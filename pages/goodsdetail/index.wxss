@@ -61,6 +61,7 @@ page {
   position: fixed;
   bottom: 0rpx;
   animation:bottom_buy 1s;
+  border-top: 1rpx solid #efefef;
 }
 
 @keyframes bottom_buy {
@@ -326,4 +327,59 @@ page {
 }
 .black_pay{
    background: #000!important;
+}
+
+.bottomTips{
+  width: 100%;
+  padding: 6%;
+  background: #fff;
+  box-sizing: border-box;
+  text-align: center
+}
+.bottomTips>view {
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  border-top: 1rpx solid #efefef
+
+}
+/* 客服按钮开始 */
+.col-100 {
+  width: 100%;
+  background-color: #FFFFFF;
+  margin-top: 20rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+ 
+.button-setting {
+  border-bottom: #F2F2F2 1px solid;
+  padding: 30rpx 20rpx 30rpx 60rpx;
+  color: #333;
+}
+ 
+.icon-right {
+  float: right;
+  color: #CCC;
+}
+ 
+.contacButton {
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  display: block;
+  box-sizing: border-box;
+}
+ 
+.contacButton::after {
+  border: #FFF solid;
+}
+ 
+.contacButtonView {
+  padding: 12rpx 0rpx 12rpx 0rpx;
+  color: #333;
+  box-sizing: border-box;
 }

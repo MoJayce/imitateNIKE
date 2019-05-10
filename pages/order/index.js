@@ -1,35 +1,13 @@
-// pages/Logining/index.js
+// pages/order/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    Timer:false,
-    phone:"",
+
   },
-  toJoin(){
-      wx.navigateTo({
-        url: '../Reg/index?rid=1',
-      })
-  },
-  phone(e){
-    clearTimeout(this.data.Timer)
-    this.setData({
-      Timer:setTimeout(() => {
-        this.setData({
-          phone:e.detail.value
-        })
-      }, 300)
-    })
-  },
-  next(){
-    console.log(this.data.phone)
-    let phoneNumber = this.data.phone.replace(/\s+/g, "")
-    if (phoneNumber === ''){
-        console.log("没有填手机号")
-    }
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -62,9 +40,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    wx.reLaunch({
-      url: '../../components/loginSwiper/index?lid=1'
-    })
+
   },
 
   /**

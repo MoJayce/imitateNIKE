@@ -5,7 +5,7 @@
 
 <view class='PhoneNumber fontSize'>
   <view>+86</view>
-  <input placeholder='输入手机号'></input>
+  <input placeholder='输入手机号' bindinput='phone'></input>
 </view>
 <view class='verification fontSize'>
   <input placeholder='密码' type='password'></input>

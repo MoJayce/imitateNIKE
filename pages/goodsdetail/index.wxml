@@ -29,7 +29,7 @@
 <!-- 购买按钮 从底部弹出来的-->
 <view class='buy_btn'>
 </view>
-<view class='buy_now {{showView?"show":"hide"}}' bindtap='buyNow'>立即购买</view>
+<view class='buy_now {{showView?"show":"hide"}}' bindtap='buyNow'>加入购物车</view>
 <mask hidden="{{hidden1}}" style="z-index: 1;" hover-style="none" bindtap="hideMask" />
 <!-- 选择规格 -->
 <view class='specification {{showView?"hide":"show"}}'>
@@ -78,23 +78,23 @@
         <view class='right'><image src='../../image/nav/right.png'></image></view>
       </view>
     <!-- tab3 -->
-      <view class='tab2'>
+      <!-- <view class='tab2'>
           <view>电子邮件</view>
           <view>添加电子邮箱</view>
           <view class='right'><image src='../../image/nav/right.png'></image></view>
-      </view>
+      </view> -->
     <!-- tab4 -->
-    <view class='tab2'>
+    <!-- <view class='tab2'>
         <view>电子发票</view>
         <view>添加电子发票信息(选填)</view>
         <view class='right'><image src='../../image/nav/right.png'></image></view>
-    </view>
+    </view> -->
     <!-- tab5-->
-    <view class='tab2' >
+    <!-- <view class='tab2' >
         <view>促销码</view>
         <view>(选填)</view>
         <view class='right'><image src='../../image/nav/right.png'></image></view>
-    </view>
+    </view> -->
     <!-- tab6-->
     <view class='tab2'>
         <view>订单总额</view>
@@ -104,7 +104,21 @@
     <!-- tab7  -->
     <view class='toPay'>
     <text>点击去支付即表示您同意NIKE的销售条款</text>
-      <view class='{{addmsgs?"":"black_pay"}}' bindtap='toPay'>去支付</view>
+      <view class='{{addmsgs?"":"black_pay"}}' bindtap='toPay'>加入购物车</view>
     </view>
+</view>
+<view class='bottomTips'>
+  <view bindtap='toIndex'>返回首页</view>
+  <!-- <view>
+  <contact-button open-type="contact" style='width:100%;height:100%'>联系客服</contact-button>
+  </view> -->
+<view class='col-100'>
+  <button open-type="contact" class='contacButton'>
+    <view class='contacButtonView' wx:for='{{connectButton}}' wx:key='key'>
+      <text class='floatL {{item.className}}'>{{item.text}}</text>
+      <!-- <text class='icon-right {{item.className}}'>〉</text> -->
+    </view>
+  </button>
+</view>
 </view>
 <view style='width:100%;height:200rpx'></view>

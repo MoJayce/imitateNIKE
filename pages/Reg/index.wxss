@@ -18,6 +18,8 @@
   border-radius: 6rpx;
   display: flex;
   justify-content: space-between;
+  font-size: 26rpx;
+  margin: 0 auto;
 }
 
 .PhoneNumber>view:nth-of-type(1) {
@@ -127,4 +129,20 @@
   border-radius: 6rpx;
   padding-left:4%;
   box-sizing: border-box
+}
+.checkStyle{
+  width: 82%;
+  height: 50rpx;
+  font-size: 28rpx;
+  color: red;
+  margin: 0 auto;
+}
+.noStyle{
+  color: transparent
+}
+.unsend{
+  color: #eee
+}
+.send{
+  color: #000
 }

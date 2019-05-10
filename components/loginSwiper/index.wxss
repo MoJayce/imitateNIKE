@@ -96,7 +96,7 @@ page {
 /* 更多和登录按钮 */
 
 .more {
-  width: 220rpx;
+  width: 260rpx;
   height: 80rpx;
   line-height: 80rpx;
   text-align: center;
@@ -107,4 +107,54 @@ page {
   left: 40rpx;
   font-size: 26rpx;
   font-weight: bold;
+}
+/* //登录按钮弹框 */
+.regbtn{
+  width: 80%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: #fff;
+  text-align: center;
+  z-index: 2;
+  border-radius: 20rpx;
+  padding: 20rpx 0 0 0;
+}
+.regbtn>view:nth-of-type(1){
+  width: 100%;
+  font-size: 36rpx;
+  line-height: 80rpx;
+}
+.regbtn>view:nth-of-type(2){
+  width: 100%;
+  font-size: 30rpx;
+  height: 150rpx;
+  color: #aaa;
+  line-height: 80rpx;
+}
+.queding{
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  border-top: 1rpx solid #aaa;
+}
+.queding>view{
+  display: block;
+  flex: 5;
+}
+button{
+  border: 0rpx;
+  outline: none;
+  background: transparent;
+  border-radius: 0;
+  box-sizing: none;
+  font-size: 32rpx;
+}
+button::after {
+  border: none;
 }

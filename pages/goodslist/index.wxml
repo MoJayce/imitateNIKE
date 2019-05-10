@@ -1,9 +1,9 @@
 <view class='nav'>
   <!-- 导航栏 -->
-  <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%" scroll-into-view="{{toView}}">
+  <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%" >
     <block wx:for="{{pages}}" wx:key>
-      <view class="scroll-view-item_H {{item.chose?'active':''}}"  data-type='{{item.type}}' bindtap='choseShoes' id="{{item.id}}">
-        {{item.type}}
+      <view class="scroll-view-item_H {{item.chose?'active':''}}"  data-type='{{item.Title}}' bindtap='choseShoes' id="{{item.Id}}">
+        {{item.Title}}
       </view>
     </block>
     <!-- 偏移的div -->
@@ -12,10 +12,10 @@
 </view>
 <!-- 内容区域 -->
 <view class='content'>
-  <view class='goods' wx:for="{{allShoes}}" wx:key data-id="{{item.id}}" bindtap='goodsDetail'>
-    <image src='{{item.imgSrc}}' mode='widthFix'></image>
-    <view class='title'>{{item.title}}</view>
-    <view class='type'>{{item.type}}</view>
+  <view class='goods' wx:for="{{allShoes}}" wx:key='{{item.Id}}' data-id="{{item.Id}}" bindtap='goodsDetail'>
+    <image src='{{imgUrl+item.ImgUrl}}' mode='widthFix'></image>
+    <view class='title'>{{item.Title}}</view>
+    <view class='type'>{{item.ParentTitle}}</view>
     <view class='price'>￥{{item.price}}</view>
   </view>
 </view>

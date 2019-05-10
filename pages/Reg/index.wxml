@@ -6,11 +6,12 @@
 
 <view class='PhoneNumber fontSize'>
   <view>+86</view>
-  <input placeholder='输入手机号'></input>
-  <view>发送验证码</view>
+  <input placeholder='输入手机号' bindblur='PhoneNum' value='{{phoneNumber}}'></input>
+  <view bindtap='setVerificationCode' class='{{daojs?"send":"unsend"}}'>{{toastMsg}}</view>
 </view>
-<view class='verification fontSize'>
-  <input placeholder='输入验证码'></input>
+<view class='{{checkStyle?"checkStyle":"noStyle"}}'>请检查手机号码格式</view>
+<view class='verification'>
+  <input placeholder='输入验证码' bindblur='verificationCode'></input>
 </view>
 <view wx:if="{{Iscountry}}" class='Iscountry fontSize'>
 <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
@@ -22,12 +23,12 @@
 <view class='next'>
   <view bindtap='next'>继续</view>
 </view>
-<view class='line'>
+<!-- <view class='line'>
   <view></view>
   <text>或者</text>
   <view></view>
-</view>
-<view class='toLogin'>
+</view> -->
+<!-- <view class='toLogin'>
   <view>已经是会员？</view>
   <view bindtap='toLogin'>立即登录</view>
-</view>
+</view> -->

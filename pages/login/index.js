@@ -1,4 +1,5 @@
 // pages/login/index.js
+import util from '../../utils/util.js'
 Page({
 
   /**
@@ -26,14 +27,14 @@ Page({
   },
   back(){
     wx.navigateTo({
-      url: '../Logining/index',
+      url: '../Reg/index',
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(util.phoneNum)
   },
 
   /**
@@ -47,7 +48,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+      this.setData({
+        phoneNum: util.phoneNum
+      })
   },
 
   /**

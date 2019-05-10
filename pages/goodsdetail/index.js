@@ -18,6 +18,11 @@ Page({
     showView: true,
     showViews: true,
     ShoesColor: "",
+    connectButton: [{
+      className: "",
+      text: "在线客服",
+      bindtap: ""
+    }],
     shoesImgList: [],
     goodsList: [{
         id: 182,
@@ -315,12 +320,30 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    let that = this
     console.log(options.gid)
     console.log(options.adid)
+    if (options.gid == undefined){
+      wx.switchTab({
+        url: '../index/index',
+      })
+    }else{
+      let list = {
+        wid: util.wid,
+        id: options.gid
+      }
+      util.promise("/api/weixin/WxProduct/GetProductByPid", "GET", list).then(res => {
+        console.log(res)
+        let list = Object.assign({}, res.data.Data)
+        console.log(list)
+
+      }).catch(err => {
+        console.log(err)
+      })
+    }
     wx.setNavigationBarTitle({ //设置title
-      title: this.data.goodsList[0].name
+      title: that.data.goodsList[0].name
     })
-    let that = this
     let colorid = []
     colorid.push(that.data.goodsList[0])
     let bigImgSrc = that.data.shopCart[0].src
@@ -351,13 +374,13 @@ Page({
       key: 'address',
       success: function(res) {
         console.log(res.data)
-        if (res.data){
+        if (res.data) {
           that.setData({
-            addmsgs:false,
+            addmsgs: false,
             addmsg: res.data[0].Provinces
           })
         }
-        
+
       },
     })
     // if (addressList != "") {
@@ -370,13 +393,42 @@ Page({
     console.log(that.data.addmsg)
   },
   // 支付按钮
-  toPay(){
-    if (this.data.addmsgs){
+  toPay() {
+    let that = this
+    if (that.data.addmsgs) {
       wx.showToast({
         title: '请选择地址',
-        icon:"none"
+        icon: "none"
+      })
+    } else {
+      let sizeId = that.data.sizeId
+      let colorId = that.data.ShoesColor
+      let choseList = that.data.goodsList
+      console.log(util)
+      let cartList = {
+        "SessionId": util.sessionId,
+        "Wid": util.wid,
+        "ProductId": 5,//商品ID
+        "ClothingId": "",
+        "SkuId": 0,
+        "SkuInfo": "",
+        "TotPrice": 90,//价格
+        "TotCentum": 0,//合计
+        "ProductNum": 1,//数量
+        "CreateDate": "",
+        "Status": 1,
+        "Spare4": 0,
+        "InvitationUnionId": ""//分享id
+      }
+      util.promise("/api/weixin/WxShoppingCart/InsertShopCart", "POST", cartList).then(res => {
+        console.log(res)
       })
     }
+  },
+  toIndex() {
+    wx.switchTab({
+      url: '../index/index',
+    })
   },
   /**
    * 生命周期函数--监听页面隐藏

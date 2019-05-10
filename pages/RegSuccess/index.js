@@ -14,13 +14,13 @@ Page({
       region: e.detail.value
     })
   },
-  save(){
-    wx.navigateTo({
-      url: '../index/index',
+  save() {
+    wx.switchTab({
+      url: '../mine/index',
     })
   },
-  next(){
-    wx.navigateTo({
+  next() {
+    wx.switchTab({
       url: '../index/index',
     })
   },

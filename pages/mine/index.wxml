@@ -1,1 +1,37 @@
-<!-- <loginSwiper wx:if="{{isLogin}}"></loginSwiper> -->
+<view wx:if="{{isLogin}}"></view>
+<view wx:else>
+  <view class='topTitle'></view>
+  <view class='othersTitle'>
+    <view class='headImg'>
+      <button  open-type="getUserInfo"  bindgetuserinfo="bindGetUserInfo">
+         <image wx:if="{{userMsg}}" mode='widthFix' src='{{userMsg.avatarUrl}}'></image>
+         <block wx:else>获取头像</block>
+      </button>
+        
+    </view>
+    <view class='Name'>{{userMsg.nickName}}</view>
+    <view class='Date'>注册日期</view>
+    <view class='listTitle'>
+      <view>
+        <image mode='widthFix' src='../../image/nav/order.png'></image>
+        <view>订单信息</view>
+      </view>
+      <view>
+        <image mode='widthFix' src='../../image/nav/box.png'></image>
+        <view>Nike上海</view>
+      </view>
+      <view>
+        <image mode='widthFix' src='../../image/nav/jifen.png'></image>
+        <view>我的积分</view>
+      </view>
+      <view>
+        <image mode='widthFix' src='../../image/nav/set.png'></image>
+        <view>账户设置</view>
+      </view>
+    </view>
+  </view>
+  <view class='bottomTitle'>
+  <view>帮助中心</view>
+  <view><image mode='widthFix' src='../../image/nav/right.png'></image></view>
+  </view>
+</view>
